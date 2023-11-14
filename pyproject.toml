@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "prompt2db"
+version = "0.1.0"
+description = ""
+authors = ["ivan <ivanmarkov1997@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+streamlit = "^1.28.1"
+torch = "^2.1.0"
+transformers = "^4.35.0"
+langchain = "^0.0.335"
+pymysql = "^1.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
