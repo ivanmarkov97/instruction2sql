@@ -1,1 +1,1 @@
-# instruction2sql
+# prompt2sql
