@@ -6,7 +6,7 @@ from langchain.llms import HuggingFaceHub
 class HFHub:
     """Client for getting LLMs from HuggingFace hub"""
 
-    def __init__(self, hf_token: str | None) -> None:
+    def __init__(self, hf_token: str | None = None) -> None:
         """
         Init instance.
 
@@ -15,7 +15,7 @@ class HFHub:
         """
         self._hf_token = hf_token if hf_token is not None else os.environ['HUGGINGFACEHUB_API_TOKEN']
 
-    def load_model(self, model_name: str, model_params: dict) -> None:
+    def load_model(self, model_name: str, model_params: dict) -> HuggingFaceHub:
         """
         Download model from HF by model_name and model_params.
 
@@ -26,7 +26,6 @@ class HFHub:
             HuggingFaceHub - Ready-to-use LLM from HF hub.
         """
         return HuggingFaceHub(
-            token=self._hf_token,
             repo_id=model_name,
             model_kwargs=model_params
         )
